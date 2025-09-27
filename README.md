@@ -1,106 +1,115 @@
-📧 Email Spam Detection: A Comparative Study
-Project Overview
-This project implements and compares three powerful machine learning classifiers—K-Nearest Neighbors (KNN), Decision Tree (DT), and Support Vector Machine (SVM)—to accurately classify emails as spam or ham (not spam). The primary goal is to evaluate their performance using key metrics like accuracy, precision, and recall, providing a comprehensive view of which algorithm is most effective for this task.
+📧 Email Spam Detection
+Overview
 
-🚀 Key Features
-Comparative Analysis: Performance metrics (Accuracy, Precision, Recall) are generated for all three models.
+This project classifies emails as spam or ham using three popular machine learning algorithms:
 
-Feature Engineering: Utilizes TF-IDF Vectorization for converting raw email text into meaningful numerical features.
+K-Nearest Neighbors (KNN)
 
-Model Interpretability: Includes a visualization of the Decision Tree to illustrate the learned classification rules.
+Decision Tree (DT)
 
-Robust Evaluation: Generates Confusion Matrices for a detailed breakdown of model errors.
+Support Vector Machine (SVM)
 
-Live Demo: Demonstrates predictions on new, unseen email examples.
+The goal is to compare model performance and visualize the decision-making process.
 
-🗂 Dataset
-The project utilizes a well-known Email Spam Detection dataset (often sourced from Kaggle or the UCI repository).
+Dataset
 
-Column	Description
-label	Classification: 'ham' or 'spam'
-text	The full content of the email
+Source: Email Spam Detection dataset (Kaggle / UCI)
 
-Export to Sheets
-Data Preprocessing Notes:
-Label Encoding: ham is converted to 0 and spam is converted to 1.
+Columns:
 
-Feature Vectorization: The email text is converted into a numeric feature set using TF-IDF (Term Frequency-Inverse Document Frequency).
+label → 'ham' or 'spam'
 
-Note: For simplicity and efficiency, TF-IDF is limited to the top 1000 most frequent words.
+text → content of the email
 
-Train-Test Split: Models are trained on 80% of the data and tested on the remaining 20%.
+Preprocessing:
 
-⚙️ Model Implementations
-1. K-Nearest Neighbors (KNN)
-Classifies a new email based on the majority label of its closest neighbors in the feature space. A simple yet effective non-parametric method.
+Labels are converted to numeric: ham = 0, spam = 1
 
-2. Decision Tree (DT)
-A white-box model that builds a tree structure by splitting the data based on the most important words that help separate spam from ham.
+Text is converted to numerical features using TF-IDF Vectorization
 
-Note: The tree depth is limited to 5 for optimal readability and interpretation.
+Models & Approach
+1️⃣ K-Nearest Neighbors (KNN)
 
-3. Support Vector Machine (SVM)
-Finds the optimal hyperplane that maximizes the margin between the spam and ham classes. It is particularly effective for high-dimensional text data.
+Classifies emails based on the labels of the nearest neighbors.
 
-🛠 Installation and Usage
-Prerequisites
-Python 3.x
+Simple, intuitive, but can be slower with large datasets.
 
-The spam.csv dataset (must be placed in the project directory)
+2️⃣ Decision Tree (DT)
 
-Steps
-Clone the Repository:
+Builds a tree of rules to separate spam from ham.
 
-Bash
+Includes a decision tree visualization for interpretation.
+
+3️⃣ Support Vector Machine (SVM)
+
+Finds a hyperplane that best separates spam and ham in high-dimensional space.
+
+Performs well with text data.
+
+Evaluation
+
+Metrics calculated: Accuracy, Precision, Recall, F1-score
+
+Confusion matrices created for each model
+
+Decision Tree visualized to understand the features used for classification
+
+Usage
+
+Clone the repository:
 
 git clone <your-repo-url>
 cd email-spam-detection
-Install Dependencies:
 
-Install all required Python packages using the provided requirements.txt file.
 
-Bash
+Install required packages:
 
 pip install -r requirements.txt
-Run the Project:
 
-Execute the main script/notebook to perform data preprocessing, model training, evaluation, and generate outputs.
 
-Bash
+Run the main script or notebook:
 
 python spam_detection.py
-# OR open and run the assignment.ipynb notebook
-📊 Outputs and Interpretation
-Metrics Comparison Table
-A generated model_comparison_metrics.csv will provide a clear, side-by-side view of model performance.
 
-Metric	Interpretation	Importance in Spam Detection
-Accuracy	Overall correctness: (True Positives+True Negatives)/Total	General measure of model performance.
-Precision	Out of all emails predicted as SPAM, how many were actually SPAM?	Crucial for minimizing False Positives (important email marked as spam).
-Recall	Out of all actual SPAM emails, how many were correctly detected?	Crucial for minimizing False Negatives (spam email getting to the inbox).
 
-Export to Sheets
-Confusion Matrices
-A visual breakdown (for KNN, DT, and SVM) showing True Positives, True Negatives, False Positives, and False Negatives.
+The script will:
 
-Decision Tree Visualization
-The decision_tree.png file provides a visual roadmap of the rules learned by the Decision Tree model, highlighting the most informative words.
+Preprocess the data
 
-📝 Example Predictions
-Email Text	Predicted Label
-"You won a free ticket! Claim now."	Spam
-"Are we meeting today at the office?"	Ham
+Train KNN, Decision Tree, and SVM models
 
-Export to Sheets
-📂 Project Files Structure
-email-spam-detection/
-├── spam_detection.py / assignment.ipynb   # Main code (preprocessing, training, evaluation)
-├── requirements.txt                       # List of dependencies
-├── decision_tree.png                      # Visualization of the Decision Tree model
-├── model_comparison_metrics.csv           # Model performance metrics table
-├── spam.csv                               # The dataset (required to run the project)
-└── README.md                              # This file
-⚡ Author
+Evaluate metrics and print results
+
+Display confusion matrices
+
+Visualize the decision tree
+
+Predict new email examples
+
+Example Predictions
+Email Text	Prediction
+"You won a free ticket!"	Spam
+"Are we meeting today?"	Ham
+Deliverables
+
+Trained models (optional .joblib files)
+
+Decision tree visualization (decision_tree.png)
+
+Model comparison table (model_comparison_metrics.csv)
+
+Confusion matrices and classification reports
+
+Demo of new email predictions
+
+Author
+
 Shivam Singh – BSc Data Science Student
 
-Feel free to connect or contribute!
+This version:
+
+Uses sections, bullet points, and tables for readability
+
+Includes emojis lightly for GitHub visual appeal
+
+Looks professional and clean
