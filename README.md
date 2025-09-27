@@ -1,5 +1,6 @@
 📧 Email Spam Detection
-Overview
+
+🔍 Project Overview
 
 This project classifies emails as spam or ham using three popular machine learning algorithms:
 
@@ -9,11 +10,11 @@ Decision Tree (DT)
 
 Support Vector Machine (SVM)
 
-The goal is to compare model performance and visualize the decision-making process.
+It compares model performance, visualizes the decision tree, and demonstrates predictions on new emails.
 
-Dataset
+🗂 Dataset
 
-Source: Email Spam Detection dataset (Kaggle / UCI)
+Source: Kaggle / UCI Email Spam Detection dataset
 
 Columns:
 
@@ -21,40 +22,46 @@ label → 'ham' or 'spam'
 
 text → content of the email
 
-Preprocessing:
+Preprocessing steps:
 
-Labels are converted to numeric: ham = 0, spam = 1
+Labels converted to numeric (ham = 0, spam = 1)
 
-Text is converted to numerical features using TF-IDF Vectorization
+Text converted to numerical features using TF-IDF Vectorization
 
-Models & Approach
+🛠 Approach & Models
 1️⃣ K-Nearest Neighbors (KNN)
 
-Classifies emails based on the labels of the nearest neighbors.
+Predicts an email’s label based on the labels of its nearest neighbors.
 
-Simple, intuitive, but can be slower with large datasets.
+Simple and intuitive but can be slower on large datasets.
 
 2️⃣ Decision Tree (DT)
 
-Builds a tree of rules to separate spam from ham.
+Builds a tree of rules to classify spam vs. ham.
 
 Includes a decision tree visualization for interpretation.
 
+
 3️⃣ Support Vector Machine (SVM)
 
-Finds a hyperplane that best separates spam and ham in high-dimensional space.
+Finds the hyperplane that best separates spam from ham in high-dimensional space.
 
-Performs well with text data.
+Works well with sparse text features.
 
-Evaluation
+📊 Evaluation
 
 Metrics calculated: Accuracy, Precision, Recall, F1-score
 
 Confusion matrices created for each model
 
-Decision Tree visualized to understand the features used for classification
+Example Confusion Matrix (Decision Tree):
 
-Usage
+
+⚡ Example Predictions
+Email Text	Prediction
+"You won a free ticket!"	Spam
+"Are we meeting today?"	Ham
+💻 How to Run
 
 Clone the repository:
 
@@ -76,7 +83,7 @@ The script will:
 
 Preprocess the data
 
-Train KNN, Decision Tree, and SVM models
+Train KNN, DT, and SVM models
 
 Evaluate metrics and print results
 
@@ -86,30 +93,18 @@ Visualize the decision tree
 
 Predict new email examples
 
-Example Predictions
-Email Text	Prediction
-"You won a free ticket!"	Spam
-"Are we meeting today?"	Ham
-Deliverables
+📂 Deliverables
 
-Trained models (optional .joblib files)
+Trained models (.joblib files)
 
 Decision tree visualization (decision_tree.png)
 
 Model comparison table (model_comparison_metrics.csv)
 
-Confusion matrices and classification reports
+Confusion matrices & classification reports
 
-Demo of new email predictions
+Demo on new emails
 
-Author
+📝 Author
 
 Shivam Singh – BSc Data Science Student
-
-This version:
-
-Uses sections, bullet points, and tables for readability
-
-Includes emojis lightly for GitHub visual appeal
-
-Looks professional and clean
